@@ -1,0 +1,138 @@
+@import 'antd/dist/reset.css';
+
+:root {
+  --cockpit-bg: #f3f6fb;
+  --cockpit-surface: #ffffff;
+  --cockpit-border: #e5eaf3;
+  --cockpit-text: #0f172a;
+  --cockpit-muted: #64748b;
+  --cockpit-accent: #2563eb;
+  --cockpit-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--cockpit-bg);
+  color: var(--cockpit-text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', sans-serif;
+}
+
+.mono {
+  font-family: var(--cockpit-mono);
+}
+
+.cockpit-shell {
+  min-height: 100vh;
+  background: var(--cockpit-bg);
+}
+
+.cockpit-sider {
+  background: linear-gradient(180deg, #0f172a 0%, #172036 100%) !important;
+  border-right: 1px solid #1e293b;
+}
+
+.cockpit-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.cockpit-logo-badge {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 17px;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.35);
+  flex-shrink: 0;
+}
+
+.cockpit-header {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--cockpit-border);
+  padding: 0 24px !important;
+  height: 60px !important;
+  line-height: 60px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.cockpit-card {
+  border-radius: 12px !important;
+  border: 1px solid var(--cockpit-border) !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+}
+
+.code-viewer {
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: var(--cockpit-mono);
+  font-size: 12.5px;
+  line-height: 1.65;
+  padding: 16px 18px;
+  border-radius: 10px;
+  overflow: auto;
+  max-height: 540px;
+  margin: 0;
+  white-space: pre;
+  border: 1px solid #1e293b;
+}
+
+.table-list-item {
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.table-list-item:hover {
+  background: #f1f5f9;
+}
+
+.table-list-item.active {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.er-canvas-wrapper {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 205px);
+  min-height: 560px;
+  background-color: #f8fafc;
+  background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+  background-size: 20px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--cockpit-border);
+  overflow: hidden;
+  user-select: none;
+}
+
+.er-node-card {
+  cursor: grab;
+}
+
+.er-node-card:active {
+  cursor: grabbing;
+}

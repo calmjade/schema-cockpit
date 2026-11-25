@@ -1,0 +1,31 @@
+{
+  "name": "schema-cockpit-backend",
+  "version": "1.0.0",
+  "description": "星枢研发舱后端服务 — 多项目表结构资产、ER 拓扑与代码生成引擎",
+  "author": "Cao Jie (calmjade) <calmjade@foxmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fastify/cors": "^10.0.2",
+    "fastify": "^5.2.0",
+    "sql.js": "^1.12.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.19",
+    "@types/sql.js": "^1.4.9",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}
