@@ -10,8 +10,11 @@ import type {
   SearchResult,
 } from '../types';
 
+const API_PREFIX = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 async function request<T>(url: string, options?: RequestInit): Promise<T> {
-  const res = await fetch(url, {
+  const targetUrl = url.startsWith('/api') ? `${API_PREFIX}${url}` : url;
+  const res = await fetch(targetUrl, {
     headers: {
       'Content-Type': 'application/json',
       ...(options?.headers ?? {}),
